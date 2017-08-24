@@ -56,3 +56,15 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+      # Deploy
+      - add_ssh_keys:
+          fingerprints:
+            - "37:f2:e1:e5:bc:9a:6e:06:ba:17:35:4b:4d:6c:68:c4"
+      - deploy:
+          name: Deploy master to staging
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              .circleci/heroku_setup
+              .circleci/heroku_deploy
+            fi
