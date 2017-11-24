@@ -9,16 +9,16 @@ end
 
 gem 'haml-rails'
 
-gem 'rails'
 gem 'pg'
 gem 'puma'
+gem 'rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 # gem 'therubyracer', platforms: :ruby
 
-gem 'turbolinks'
 gem 'jbuilder'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -28,9 +28,9 @@ end
 
 group :development do
   gem 'listen'
-  gem 'web-console'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do
